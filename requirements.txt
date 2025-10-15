@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+sqlalchemy
+aiosqlite
+pydantic-settings>=2.0
+pydantic>=2.4
+pydantic[email]
+psycopg2

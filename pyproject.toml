@@ -1,0 +1,17 @@
+[project]
+name = "backend_ai_IT"
+version = "0.1.0"
+description = "FastAPI MVC scaffold"
+authors = [{name = "You"}]
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "python-dotenv",
+    "sqlalchemy",
+    "aiosqlite",
+]
+requires-python = ">=3.10"
+
+[tool.black]
+line-length = 100
