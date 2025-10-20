@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from ..controllers.cient_controller import get_clients_controller, create_client_repository
 from app.schemas.client_schema import ClientModel
 
-router = APIRouter()
+router = APIRouter(prefix="/clients", tags=["clients"])
 
 
 @router.get("/")

@@ -16,7 +16,6 @@ def create_client_repository(client: ClientModel):
     conn = get_db_connection()
     cur = conn.cursor()
 
-    procedure_name = 'insert_client'
     arguments = (
         client.p_name, 
         client.p_email, 
@@ -24,7 +23,9 @@ def create_client_repository(client: ClientModel):
         client.p_address, 
         client.p_balance
     )
-    cur.execute(f"CALL {procedure_name}(%s, %s, %s, %s, %s);", arguments)
+    cur.execute(f"""
+                INSERT INTO clients (name, email, phone_number, address, balance) 
+                VALUES (%s, %s, %s, %s, %s);""", arguments)
     conn.commit()
     cur.close
     return {"mensaje": "cliente creado", "cliente": client}
